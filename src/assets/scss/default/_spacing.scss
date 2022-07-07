@@ -1,0 +1,44 @@
+.m-all-minus-10 {
+    margin: -10px !important;
+}
+
+$spaceAmounts: (1, 2, 3, 4, 5, 7, 10, 12, 15, 17, 20, 25, 30, 35, 40);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceAmounts {
+    .ma-#{$space} {
+        margin: #{$space}px !important;
+    }
+
+    .pa-#{$space} {
+        padding: #{$space}px !important;
+    }
+
+    .mx-#{$space} {
+        margin-left: #{$space}px !important;
+        margin-right: #{$space}px !important;
+    }
+
+    .px-#{$space} {
+        padding-left: #{$space}px !important;
+        padding-right: #{$space}px !important;
+    }
+    .my-#{$space} {
+        margin-top: #{$space}px !important;
+        margin-bottom: #{$space}px !important;
+    }
+
+    .py-#{$space} {
+        padding-top: #{$space}px !important;
+        padding-bottom: #{$space}px !important;
+    }
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+}

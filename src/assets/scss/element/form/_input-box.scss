@@ -1,0 +1,18 @@
+.cc-input-box{
+    display: flex;
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: #EFF1F6;
+    background-color: #FFFFFF;
+    transition: all .3s;
+    &-input{
+        @include input;
+    }
+    &-sm{
+        border-radius: 2px;
+        .cc-input-box-input{
+            @include input-sm;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.cc-select-box-container{
+    .cc-select-box{
+        display: flex;
+        border-style: solid;
+        border-radius: 2px;
+        border-width: 1px;
+        border-color: #EFF1F6;
+        background-color: #FFFFFF;
+        transition: all .3s;
+        cursor: pointer;
+        &-input{
+            @include input;
+        }
+        &-item-container{
+            position: fixed;
+            opacity: 0;
+            background-color: #FFFFFF;
+        }
+        &-sm{
+            border-radius: 2px;
+            .cc-input-box-input{
+                @include input-sm;
+            }
+        }
+    }    
+}

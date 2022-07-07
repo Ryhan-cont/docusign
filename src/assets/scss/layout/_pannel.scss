@@ -1,0 +1,60 @@
+.pannel-{
+    &-layout{
+        display: flex;
+    }
+    &-header{
+        background-color: red;
+    }
+
+    &-left-menubar{
+        flex-shrink: 0;
+        &-floating{
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            top: 0px;
+            right: 0px;
+            width: auto !important;
+            background-color: rgba(0,0,0,.5);
+        }
+        &-main{
+            background-color: blue;
+            height: 100vh;
+        }
+    }
+    &-body{
+        flex: auto;
+        min-height: 100vh;
+        background-color: bisque;
+    }
+}
+
+//Animation-slide
+.slide-left-menu-enter-to,
+.slide-left-menu-leave-from {
+  margin-left:0px;
+}
+.slide-left-menu-enter-active,
+.slide-left-menu-leave-active {
+  transition: all .2s ease;
+  margin-left: 0px;
+}
+.slide-left-menu-enter-from,
+.slide-left-menu-leave-to {
+  margin-left: var(--leftMenuNegSize);
+}
+
+//Animation-fade
+.fade-left-menu-enter-to,
+.fade-left-menu-leave-from {
+  opacity:1;
+}
+.fade-left-menu-enter-active,
+.fade-left-menu-leave-active {
+  transition: all .2s ease;
+  margin-left: 0px;
+}
+.fade-left-menu-enter-from,
+.fade-left-menu-leave-to {
+    opacity:0;
+}
