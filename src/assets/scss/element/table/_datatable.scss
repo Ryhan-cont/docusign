@@ -1,0 +1,48 @@
+.cc-data-table{
+    &.data-table--main{
+        display: flex;
+        background-color: #FFF;
+        
+    }
+    .data-table-{
+        &-container{
+             background-color: rgb(255, 255, 255);
+             overflow-x: auto;
+             width: 100%;
+            // /* Just common table stuff. */
+            table  { border-collapse: collapse; width: 100%; }
+            th, td { padding: 8px 16px; }
+            td {white-space: nowrap;}
+            thead{ background:#eee; position: relative;z-index: 1; }
+        }
+        &-cell{
+            &-action{
+                background-color: var(--white);
+            }
+        }
+        &-y-scroll{
+            overflow-y: auto; 
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none;  /* Firefox */
+            &::-webkit-scrollbar { 
+                display: none;  /* Safari and Chrome */
+            }
+
+        }
+        &-scroll{
+            &-head{
+                background:#eee;
+            }
+            &-bar{
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+        &-loading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+    }
+}

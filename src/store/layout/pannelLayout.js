@@ -4,15 +4,16 @@ export const usePannelLayoutStore = defineStore('pannelLayout', {
     state: () => ({
         //Default Settings
         breakPoint : 600,
-        leftMenuWidth : 250,
+        leftMenuWidth : 261,
         leftMenuStat : true,
-        headerHeight : 80,
+        headerHeight : 70,
 
         //Adjustable
         leftMenuUserStat : true,
         floatingLeftMenu : false,
         winWidth : 0,
         winHeight : 0,
+        activeRoute:''
     }),
     actions: {
         innitialize(){

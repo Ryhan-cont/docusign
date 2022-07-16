@@ -1,0 +1,110 @@
+// font-size
+.font-8 {font-size: 8px !important;}
+.font-9 {font-size: 9px !important;}
+.font-10 {font-size: 10px !important;}
+.font-11 {font-size: 11px !important;}
+.font-12 {font-size: 12px !important;}
+.font-14 {font-size: 14px;}
+.font-15 {font-size: 15px;}
+.font-16 {font-size: 16px;}
+.font-18 {font-size: 18px;}
+.font-20 {font-size: 20px;}
+.font-25 {font-size: 25px;}
+.font-30 {font-size: 30px;}
+.font-40 {font-size: 40px;}
+  
+// Font weight
+.bold{font-weight: bold;}
+.fw-400 {font-weight: 400;}
+.fw-500 {font-weight: 500;}
+
+//Line Height
+.line-height-1{line-height: 1;}
+
+// Text
+@mixin no-text-select{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.no-text-select{@include no-text-select;}
+.line-through{text-decoration:line-through}
+
+// Font style
+.italic{font-style: italic}
+
+
+
+@mixin headeing{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 42px;
+}
+@mixin larg-p-bold{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+@mixin p-bold{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+@mixin p-semi-bold{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+@mixin p-regular{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+@mixin btn-text{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+@mixin small-p-semi-bold{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+}
+@mixin small-p-regular{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}
+@mixin xsmall-p-medium{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+}
+@mixin xsmall-p-regular{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+
+@mixin baseTypography($name){
+    .headeing#{$name}{@include headeing}
+    .larg-p-bold#{$name}{@include larg-p-bold}
+    .p-bold#{$name}{@include p-bold}
+    .p-semi-bold#{$name}{@include p-semi-bold}
+    .p-regular#{$name}{@include p-regular}
+    .btn-text#{$name}{@include btn-text}
+    .small-p-semi-bold#{$name}{@include small-p-semi-bold}
+    .small-p-regular#{$name}{@include small-p-regular}
+    .xsmall-p-medium#{$name}{@include xsmall-p-medium}
+    .xsmall-p-regular#{$name}{@include xsmall-p-regular}
+}
+
+@include baseTypography('');

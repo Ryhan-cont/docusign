@@ -1,45 +1,40 @@
 
 var menuData = [
     {
-        name:'home',
-        icon:'home',
+        name:'Dashboard',
+        routeName:'dashboard',
+        icon:'Dashboard',
+        items:[]
+    },
+    {
+        name:'Pickup Management',
+        routeName:'pickupManagement',
+        icon:'Pickup',
+        items:[]
+    },
+    {
+        name:'Role management',
+        icon:'Role',
+        show:false,
         items:[
-
             {
-                type:'list',
-                icon:'pulse',
-                name:'In Progress',
-                subItem:[
-                    {
-                        type:'btn',
-                        name:'Web App',
-                    },
-                    {
-                        type:'btn',
-                        name:'App Design',
-                    }
-                ]
+                routeName:'income',
+                name:'Income'
+            },
+            {
+                routeName:'forecast',
+                name:'Forecast',
             }
         ]
     },
     {
-        name:'messenger',
+        name:'Admin User',
         icon:'messenger',
         items:[]
     },
     {
-        name:'folder',
+        name:'Hubs',
         icon:'folder',
-        items:[]
-    },
-    {
-        name:'mail',
-        icon:'mail',
-        items:[]
-    },
-    {
-        name:'user',
-        icon:'user',
         items:[]
     },
 

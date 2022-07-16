@@ -1,0 +1,30 @@
+.cc-message-box--container{
+    .cc-message-box-{
+        &-main{
+            transition: all .3s;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            textarea{
+                padding: 15px;
+                border-radius: 8px;
+            }
+        }
+        &-input{
+            width: 100%;
+            border: 0px;
+            &:focus {
+                outline:none;
+            }
+        }
+    }
+    .cc-message-box--detail{
+        display: flex;
+        min-height: var(--input-detail-height);
+        &-box{
+            flex: auto;
+        }
+        &-count{
+
+        }
+    }
+}

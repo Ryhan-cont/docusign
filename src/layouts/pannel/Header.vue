@@ -1,17 +1,15 @@
 <template>
-    <div class="pannel--header" :style="{height:`${pannelLayout.headerHeight}px`}" @click="pannelLayout.toggleLeftMenu">
-        header
+    <div class="pannel--header" :style="{height:`${pannelLayout.headerHeight}px`}">
+        <transition :name="pannelLayout.floatingLeftMenu ? 'fade-left-menu' : 'slide-left-menu'">
+            <div class="pannel--header-spacer" v-if="pannelLayout.leftMenuStat && !pannelLayout.floatingLeftMenu" :style="{width:`${pannelLayout.leftMenuWidth}px`}"></div>
+        </transition>
+        <div class="pannel--header-content" @click="pannelLayout.toggleLeftMenu">
+            Toggle Menu
+        </div>
     </div>
 </template>
  
 <script setup>
-    // import pannelLayoutController from './js/pannelLayoutController.js'
-    // const { headerHeight, floatingLeftMenu, testVal, toggleLeftMenu } = pannelLayoutController;
     import {usePannelLayoutStore} from '@/store/layout/pannelLayout'
     const pannelLayout = usePannelLayoutStore();
-
 </script>
-
-<style lang="scss">
-
-</style>

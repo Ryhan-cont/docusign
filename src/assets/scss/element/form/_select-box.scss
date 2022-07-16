@@ -1,20 +1,58 @@
-.cc-select-box-container{
-    .cc-select-box{
-        display: flex;
-        border-style: solid;
-        border-radius: 2px;
-        border-width: 1px;
-        border-color: #EFF1F6;
-        background-color: #FFFFFF;
-        transition: all .3s;
-        cursor: pointer;
+.cc-select-box--container{
+    .cc-select-box-{
+        &-preview{
+            display: flex;
+            border-style: solid;
+            border-radius: 2px;
+            border-width: 1px;
+            border-color: #EFF1F6;
+            background-color: #FFFFFF;
+            transition: all .3s;
+            cursor: pointer;
+            height: 33px;
+            align-items: center;
+            padding:9px
+        }
         &-input{
             @include input;
+        }
+        &-search-input{
+            flex: auto;
+            input{
+                min-width: 0px;
+                width: 100%;
+                &:focus {
+                    outline:none;
+                }
+                border: 0px;
+            }
+        }
+        &-placeholder{
+            flex: auto;
+        }
+        &-text-preview{
+            flex: auto;
+        }
+        &-right-icons{
+            display: flex;
+            align-items: center;
         }
         &-item-container{
             position: fixed;
             opacity: 0;
             background-color: #FFFFFF;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 10;
+            box-shadow: 0px 5px 22px rgba(27, 27, 18, 0.13);
+            border-radius: 8px;
+            padding: 5px 10px;
+        }
+        &-item{
+            transition: all .1s;
+            &-hover{
+                background-color: rgb(113, 137, 202);
+            }
         }
         &-sm{
             border-radius: 2px;
@@ -22,5 +60,8 @@
                 @include input-sm;
             }
         }
-    }    
+    }
+    .cc-select-box--detail{
+        min-height: var(--input-detail-height);
+    }
 }

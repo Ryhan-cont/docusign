@@ -1,0 +1,97 @@
+.btn{
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 15px;
+    border-radius: 32px;
+    transition: all .3s;
+    height: 33px;
+    &-icon{
+        &-right{
+            margin-left: 0.625rem;
+        }
+        &-left{
+            margin-right: 0.3125rem;
+        }
+    }
+    &-sm{
+        padding: 0.44rem 1.25rem;
+        height: 36px;
+    }
+    &-lg{
+        padding: 0.7rem 0.9375rem;
+        height: 42px;
+    }
+}
+
+//Define all button here
+$button-templete: (
+  "info": (
+      'bg':'info-shade',
+      'border':'',
+      'text-color':'info',
+      'hover-bg':'info',
+      'hover-border':'',
+      'hover-text-color':'white',
+  ),
+);
+
+//Button generation code
+@each $name, $value in $button-templete {
+    $btn-bg-key: map-get($value, 'bg');
+    $btn-border-key: map-get($value, 'border');
+    $btn-text-color-key: map-get($value, 'text-color');
+
+    $btn-hover-bg-key: map-get($value, 'hover-bg');
+    $btn-hover-border-key:map-get($value, 'hover-border');
+    $btn-hover-text-key:map-get($value, 'hover-text-color');
+
+    $btn-border-size:0.0625rem;
+    @if(map-get($value, 'border-size')){
+        $btn-border-size:map-get($value, 'border-size');
+    }
+
+    $btn-bg:'transparent';
+    @if($btn-bg-key != ''){$btn-bg:var(--#{$btn-bg-key});}
+
+    .btn-#{$name}{
+        background-color: #{$btn-bg};
+        border: #{$btn-border-size} solid var(--#{$btn-border-key});
+        color: var(--#{$btn-text-color-key});
+
+        //Hover and focus background
+        @if($btn-hover-bg-key != ''){
+            &:hover{
+                background-color: var(--#{$btn-hover-bg-key});
+            }
+        }@else if($btn-bg-key != ''){
+            &:hover{
+                background-color: mix(#fff, map-get($colorList, $btn-bg-key), 15%);
+            }
+            &:focus{
+                background-color: mix(#fff, map-get($colorList, $btn-bg-key), 15%);
+            }
+        }
+
+        //Hover and focus text color
+        @if($btn-hover-text-key != ''){
+            &:hover{
+                color: var(--#{$btn-hover-text-key});
+            }
+        }
+        //Hover and focus border color
+        @if($btn-hover-border-key != ''){
+            &:hover{
+                border: #{$btn-border-size} solid var(--#{$btn-hover-border-key});
+            }
+        }
+    }
+}
+
+

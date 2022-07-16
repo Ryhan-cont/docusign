@@ -1,17 +1,17 @@
 <template>
   <div class="pannel--layout">
+    <Header />
     <transition :name="pannelLayout.floatingLeftMenu ? 'fade-left-menu' : 'slide-left-menu'">
       <LeftMenu v-if="pannelLayout.leftMenuStat" />
     </transition>
     <Body>
-      <Header />
-      <div @click="alert.error()">alert</div>
-      <div style="flex:auto;">
-          <router-view />
-      </div>
+        <router-view v-slot="{ Component }">
+          <transition name="fade-route" mode="out-in">
+            <component :is="Component" /> 
+          </transition>
+        </router-view>
     </Body>
   </div>
-    
 </template>
 <script setup>
     import { onBeforeMount, onBeforeUnmount } from 'vue'
@@ -24,9 +24,6 @@
     import {usePannelLayoutStore} from '@/store/layout/pannelLayout'
 
     const pannelLayout = usePannelLayoutStore();
-
-    // import pannelLayoutController from './js/pannelLayoutController.js'
-    // const { innitialize, resizeController, leftMenuStat, floatingLeftMenu, testVal  } = pannelLayoutController;
 
     onBeforeMount(()=>{
       pannelLayout.innitialize()

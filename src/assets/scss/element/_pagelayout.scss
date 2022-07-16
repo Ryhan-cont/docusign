@@ -1,0 +1,40 @@
+.pagination-{
+    &-container{
+        display: inline-flex;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    &-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 30px;
+        background-color: rgb(194, 194, 194);
+        
+        &:not(:last-child){
+            border-right: 1px solid rgb(0, 0, 0);
+        }
+    }
+    &-btn-nav{
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-disable{
+            opacity: .1;
+            cursor: auto !important;
+        }
+    }
+
+    &-btn-page{
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        &-active{
+            background-color: red;
+        }
+    }
+}

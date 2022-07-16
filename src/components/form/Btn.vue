@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <div></div>
-        <div></div>
-    </div>
+    <button class="btn">
+        <slot />
+    </button>
 </template>
 
 <script setup>
